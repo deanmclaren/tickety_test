@@ -33,14 +33,25 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(params[:id])
   end
 
+  # def update
+  #   @ticket = Ticket.find(params[:id])
+  #   if @ticket.update_attributes(params.require(:ticket).permit([:email, :name, :title, :body, :resolved]))
+  #     redirect_to @ticket
+  #   else
+  #     render :edit
+  #   end
+  # end
+
   def update
     @ticket = Ticket.find(params[:id])
     if @ticket.update_attributes(params.require(:ticket).permit([:email, :name, :title, :body, :resolved]))
-      redirect_to @ticket
+      redirect_to tickets_path
     else
       render :edit
     end
   end
+
+
 
   def destroy
   @ticket = Ticket.find(params[:id])

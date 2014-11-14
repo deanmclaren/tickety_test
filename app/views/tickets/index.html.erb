@@ -13,9 +13,9 @@
 
   <td>
         <% if ticket.resolved? %>
-          <%= button_to "Unresolved", ticket_path(ticket, ticket: {resolved: false}), class: "btn btn-default", method: :path %></td>
+          <%= button_to "Unresolved", ticket_path(ticket, ticket: {resolved: false}), class: "btn btn-primary", method: :patch %></td>
         <% else %>
-          <%= button_to "Resolved", ticket_path(ticket, ticket: {resolved: true}), class: "btn btn-default", method: :path %>
+          <%= button_to "Resolved", ticket_path(ticket, ticket: {resolved: true}), class: "btn btn-primary", method: :patch %>
         <% end %>
       </td>
 

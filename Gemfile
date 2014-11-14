@@ -20,9 +20,9 @@ gem 'bootstrap-sass'
 gem 'faker'
 gem 'devise'
 gem 'rspec'
-
-
-
+gem 'rspec-rails'
+gem 'factory_girl_rails'
+gem 'capybara'
 
 
 # Use jquery as the JavaScript library
