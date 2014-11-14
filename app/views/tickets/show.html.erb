@@ -1,0 +1,7 @@
+<!-- app/views/posts/show.html.erb -->
+<p>
+  <%= link_to "home", tickets_path %>
+  <%= link_to "edit", edit_ticket_path(@ticket) %>
+</p>
+<h1><%= @ticket.title %></h1>
+<p><%= @ticket.body %></p>

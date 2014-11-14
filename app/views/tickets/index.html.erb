@@ -1,0 +1,24 @@
+
+
+<h1>All Tickets</h1>
+
+<%= link_to "New Ticket", new_ticket_path %>
+
+<% @ticket.each do |ticket| %>
+  <h2><%= ticket.title %>
+  <small><%= link_to "View", ticket_path(ticket) %>
+  <%= link_to 'Destroy', ticket_path(ticket),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></small></h2>
+  <p><%= ticket.body %></p>
+
+  <td>
+        <% if ticket.resolved? %>
+          <%= button_to "Unresolved", ticket_path(ticket, ticket: {resolved: false}), class: "btn btn-default", method: :path %></td>
+        <% else %>
+          <%= button_to "Resolved", ticket_path(ticket, ticket: {resolved: true}), class: "btn btn-default", method: :path %>
+        <% end %>
+      </td>
+
+
+  <hr>
+<% end %>
